@@ -96,7 +96,7 @@ const ExcellentExport = function() {
     const tableToArray = function(table) {
         var tableInfo = Array.prototype.map.call(table.querySelectorAll('tr'), function(tr) {
             return Array.prototype.map.call(tr.querySelectorAll('th,td'), function(td) {
-                return td.textContent;
+                return td.textContent.trim();
             });
         });
         return tableInfo;
