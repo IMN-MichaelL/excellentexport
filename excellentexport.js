@@ -50,7 +50,7 @@ const ExcellentExport = function() {
     let csvNewLine = "\r\n";
     /**
      * Convert a string to Base64.
-     * 
+     *
      * @param {string} s
      */
     const base64 = function(s) {
@@ -62,10 +62,10 @@ const ExcellentExport = function() {
             return c[p];
         });
     };
-    
+
     /**
      * Get element by ID.
-     * @param {*} element 
+     * @param {*} element
      */
     const get = function(element) {
         if (!element.nodeType) {
@@ -76,7 +76,7 @@ const ExcellentExport = function() {
 
     /**
      * Encode a value for CSV.
-     * @param {*} value 
+     * @param {*} value
      */
     const fixCSVField = function(value) {
         let fixedValue = value;
@@ -96,7 +96,7 @@ const ExcellentExport = function() {
     const tableToArray = function(table) {
         var tableInfo = Array.prototype.map.call(table.querySelectorAll('tr'), function(tr) {
             return Array.prototype.map.call(tr.querySelectorAll('th,td'), function(td) {
-                return td.innerHTML;
+                return td.textContent;
             });
         });
         return tableInfo;
